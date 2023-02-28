@@ -1,6 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import logger from 'redux-logger';
 import cartSlice from './features/cart/cartSlice';
 import filterSlice from './features/filter/filterSlice';
+import productsSlice from './features/products/productsSlice';
 
 
 // App Store
@@ -8,7 +10,9 @@ const store = configureStore({
     reducer: {
         cart: cartSlice,
         filter: filterSlice,
+        products: productsSlice
     },
+    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 
 })
 

@@ -3,22 +3,26 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from '../components/ProductCard';
 import { toggle, toggleBrand } from '../redux/features/filter/filterSlice';
+import { getProducts } from '../redux/features/products/productsSlice';
+
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const dispatch = useDispatch()
   const filter = useSelector(state => state.filter)
+
   const { brands, stock } = filter;
 
 
-  useEffect(() => {
-    fetch('http://localhost:5000/products')
-      .then(res => res.json())
-      .then(data => setProducts(data.products))
+  const { products, isLoading } = useSelector(state => state.products)
 
+
+
+
+  useEffect(() => {
+    dispatch(getProducts())
 
   }, [])
-
 
 
   // active class
@@ -26,6 +30,11 @@ const Home = () => {
 
 
   let content;
+
+  if (isLoading) {
+    content = <div className='flex justify-center'><p className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-primary"></p></div>
+  }
+
 
   // show all products without filter
   if (products.length) {

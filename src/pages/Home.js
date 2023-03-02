@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from '../components/ProductCard';
 import { toggle, toggleBrand } from '../redux/features/filter/filterSlice';

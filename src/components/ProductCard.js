@@ -1,9 +1,9 @@
 import React from "react";
 import { BiListPlus } from "react-icons/bi";
+import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../redux/features/cart/cartSlice';
-import { MdDeleteForever } from "react-icons/md";
 
 const ProductCard = ({ product }) => {
   const { pathname } = useLocation()

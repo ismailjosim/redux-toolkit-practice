@@ -9,14 +9,8 @@ const Home = () => {
   // const [products, setProducts] = useState([]);
   const dispatch = useDispatch()
   const filter = useSelector(state => state.filter)
-
   const { brands, stock } = filter;
-
-
   const { products, isLoading } = useSelector(state => state.products)
-
-
-
 
   useEffect(() => {
     dispatch(getProducts())
@@ -29,16 +23,15 @@ const Home = () => {
 
 
   let content;
-
   if (isLoading) {
     content = <div className='flex justify-center'><p className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-primary"></p></div>
   }
-
 
   // show all products without filter
   if (products.length) {
     content = products.map((product, idx) => <ProductCard key={ idx } product={ product }></ProductCard>)
   }
+
   // show only stock products
   if (products.length && filter.stock || filter.brands.length) {
     content = products
@@ -46,18 +39,18 @@ const Home = () => {
         if (stock) {
           return product.status === true
         }
-
         return product;
+
       })
       .filter(product => {
         if (brands.length) {
           return brands.includes(product.brand)
         }
+
         return product;
       })
       .map((product, idx) => <ProductCard key={ idx } product={ product }></ProductCard>)
   }
-
 
 
   return (

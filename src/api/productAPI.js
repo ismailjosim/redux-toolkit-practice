@@ -1,6 +1,12 @@
+import axios from '../utils/axios.config';
+
+
 export const fetchProducts = async () => {
-    const res = await fetch('http://localhost:5000/products');
-    const data = await res.json();
-    return data.products;
+    const data = await axios.get('products');
+    return data.data.products;
 }
 
+export const postProduct = async (data) => {
+    await axios.post("/product", data)
+
+}

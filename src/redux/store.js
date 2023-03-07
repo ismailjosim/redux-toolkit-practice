@@ -1,7 +1,13 @@
-import { createStore } from "redux";
-import { composeWithDevTools } from "@redux-devtools/extension";
-import productReducer from "./reducers/productReducer";
+import productReducer from './reducers/productReducer';
 
-const store = createStore(productReducer, composeWithDevTools());
+const { configureStore } = require('@reduxjs/toolkit');
+
+
+const store = configureStore({
+    reducer: {
+        products: productReducer,
+
+    }
+})
 
 export default store;

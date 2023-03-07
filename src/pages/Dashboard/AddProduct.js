@@ -34,20 +34,20 @@ const AddProduct = () => {
           <label className='mb-2' htmlFor='model'>
             Model
           </label>
-          <input type='text' id='model' { ...register("model") } />
+          <input className='input input-primary w-full' placeholder='Product Model' type='text' id='model' { ...register("model") } />
         </div>
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='image'>
             Image
           </label>
-          <input type='text' name='image' id='image' { ...register("image") } />
+          <input className='input input-primary w-full' placeholder='Product Image' type='text' name='image' id='image' { ...register("image") } />
         </div>
 
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-3' htmlFor='brand'>
             Brand
           </label>
-          <select name='brand' id='brand' { ...register("brand") }>
+          <select className='select select-primary w-full' name='brand' id='brand' { ...register("brand") }>
             <option value='amd'>AMD</option>
             <option value='intel'>Intel</option>
           </select>
@@ -60,12 +60,13 @@ const AddProduct = () => {
         </div>
 
         <div className='flex flex-col w-full max-w-xs'>
-          <h1 className='mb-3'>Availability</h1>
+          <h3 className='mb-3'>Availability</h3>
           <div className='flex gap-3'>
             <div>
               <input
                 type='radio'
                 id='available'
+                className="radio radio-primary"
                 value={ true }
                 { ...register("status") }
               />
@@ -78,6 +79,7 @@ const AddProduct = () => {
                 type='radio'
                 id='stockOut'
                 name='status'
+                className="radio radio-primary"
                 value={ false }
                 { ...register("status") }
               />
@@ -96,6 +98,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature1'
             id='keyFeature1'
+            className='input input-primary w-full'
             { ...register("keyFeature1") }
           />
         </div>
@@ -107,6 +110,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature2'
             id='keyFeature2'
+            className='input input-primary w-full'
             { ...register("keyFeature2") }
           />
         </div>
@@ -118,6 +122,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature3'
             id='keyFeature3'
+            className='input input-primary w-full'
             { ...register("keyFeature3") }
           />
         </div>
@@ -129,6 +134,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature4'
             id='keyFeature4'
+            className='input input-primary w-full'
             { ...register("keyFeature4") }
           />
         </div>

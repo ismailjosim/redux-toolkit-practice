@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/actions/productAction';
 
@@ -8,7 +8,7 @@ const ProductList = () => {
 
   useEffect(() => {
     dispatch(fetchProducts())
-  }, []);
+  }, [dispatch]);
 
   const { products } = useSelector(state => state.products);
 

@@ -1,19 +1,7 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import logger from 'redux-logger';
-import cartSlice from './features/cart/cartSlice';
-import filterSlice from './features/filter/filterSlice';
-import productsSlice from './features/products/productsSlice';
+import { createStore } from "redux";
+import { composeWithDevTools } from "@redux-devtools/extension";
+import productReducer from "./reducers/productReducer";
 
-
-// App Store
-const store = configureStore({
-    reducer: {
-        cart: cartSlice,
-        filter: filterSlice,
-        products: productsSlice
-    },
-    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
-
-})
+const store = createStore(productReducer, composeWithDevTools());
 
 export default store;

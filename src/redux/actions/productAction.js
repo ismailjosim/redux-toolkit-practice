@@ -13,3 +13,15 @@ export const fetchProducts = createAsyncThunk('/products', async (products, { re
   }
 
 })
+
+
+//===> add products
+export const addProduct = createAsyncThunk('/product', async (product, { rejectWithValue }) => {
+  try {
+    const { data } = await api.post('/product', product);
+    return data.product;
+
+  } catch (error) {
+    return rejectWithValue(error.message);
+  }
+})

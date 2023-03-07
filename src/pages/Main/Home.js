@@ -10,7 +10,6 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchProducts())
-
   }, [dispatch]);
 
   const { products } = useSelector(state => state.products)

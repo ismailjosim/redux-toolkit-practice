@@ -40,29 +40,29 @@ const ProductList = () => {
             </thead>
 
             <tbody class='text-sm divide-y divide-gray-100'>
-              {products.map(({ model, brand, price, status, _id }) => (
+              { products.map(({ model, brand, price, status, _id }) => (
                 <tr>
                   <td class='p-2'>
                     <input type='checkbox' class='w-5 h-5' value='id-1' />
                   </td>
                   <td class='p-2'>
-                    <div class='font-medium text-gray-800'>{model}</div>
+                    <div class='font-medium text-gray-800'>{ model }</div>
                   </td>
                   <td class='p-2'>
-                    <div class='text-left capitalize'>{brand}</div>
+                    <div class='text-left capitalize'>{ brand }</div>
                   </td>
                   <td class='p-2'>
                     <div class='text-left'>
-                      {status ? (
+                      { status ? (
                         <p className='text-green-500 font-medium'>Available</p>
                       ) : (
                         <p className='text-red-500 font-medium'>Stock out</p>
-                      )}
+                      ) }
                     </div>
                   </td>
                   <td class='p-2'>
                     <div class='text-left font-medium text-indigo-500'>
-                      {price}
+                      { price }
                     </div>
                   </td>
                   <td class='p-2'>
@@ -86,7 +86,7 @@ const ProductList = () => {
                     </div>
                   </td>
                 </tr>
-              ))}
+              )) }
             </tbody>
           </table>
         </div>

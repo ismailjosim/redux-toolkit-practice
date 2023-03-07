@@ -26,26 +26,26 @@ const AddProduct = () => {
     <div className='flex justify-center items-center h-full '>
       <form
         className='shadow-lg p-10 rounded-md flex flex-wrap gap-3 max-w-3xl justify-between bg-white'
-        onSubmit={handleSubmit(submit)}
+        onSubmit={ handleSubmit(submit) }
       >
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='model'>
             Model
           </label>
-          <input type='text' id='model' {...register("model")} />
+          <input type='text' id='model' { ...register("model") } />
         </div>
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='image'>
             Image
           </label>
-          <input type='text' name='image' id='image' {...register("image")} />
+          <input type='text' name='image' id='image' { ...register("image") } />
         </div>
 
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-3' htmlFor='brand'>
             Brand
           </label>
-          <select name='brand' id='brand' {...register("brand")}>
+          <select name='brand' id='brand' { ...register("brand") }>
             <option value='amd'>AMD</option>
             <option value='intel'>Intel</option>
           </select>
@@ -54,7 +54,7 @@ const AddProduct = () => {
           <label className='mb-2' htmlFor='price'>
             Image
           </label>
-          <input type='text' name='price' id='price' {...register("price")} />
+          <input type='text' name='price' id='price' { ...register("price") } />
         </div>
 
         <div className='flex flex-col w-full max-w-xs'>
@@ -64,8 +64,8 @@ const AddProduct = () => {
               <input
                 type='radio'
                 id='available'
-                value={true}
-                {...register("status")}
+                value={ true }
+                { ...register("status") }
               />
               <label className='ml-2 text-lg' htmlFor='available'>
                 Available
@@ -76,8 +76,8 @@ const AddProduct = () => {
                 type='radio'
                 id='stockOut'
                 name='status'
-                value={false}
-                {...register("status")}
+                value={ false }
+                { ...register("status") }
               />
               <label className='ml-2 text-lg' htmlFor='stockOut'>
                 Stock out
@@ -94,7 +94,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature1'
             id='keyFeature1'
-            {...register("keyFeature1")}
+            { ...register("keyFeature1") }
           />
         </div>
         <div className='flex flex-col w-full max-w-xs'>
@@ -105,7 +105,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature2'
             id='keyFeature2'
-            {...register("keyFeature2")}
+            { ...register("keyFeature2") }
           />
         </div>
         <div className='flex flex-col w-full max-w-xs'>
@@ -116,7 +116,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature3'
             id='keyFeature3'
-            {...register("keyFeature3")}
+            { ...register("keyFeature3") }
           />
         </div>
         <div className='flex flex-col w-full max-w-xs'>
@@ -127,7 +127,7 @@ const AddProduct = () => {
             type='text'
             name='keyFeature4'
             id='keyFeature4'
-            {...register("keyFeature4")}
+            { ...register("keyFeature4") }
           />
         </div>
 

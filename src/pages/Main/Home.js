@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from "../../components/ProductCard";
 import { fetchProducts } from '../../redux/actions/productAction';
 
 const Home = () => {
-  // const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
 
 
 
   useEffect(() => {
     dispatch(fetchProducts())
-  }, []);
+
+  }, [dispatch]);
 
   const { products } = useSelector(state => state.products)
 
